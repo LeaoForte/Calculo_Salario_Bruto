@@ -1,0 +1,33 @@
+#include <iostream>: Esta linha inclui a biblioteca iostream, que fornece funcionalidades para entrada e saída no console.
+
+#include <locale.h>: Esta linha inclui a biblioteca locale.h, que é utilizada para configurar a localização e a formatação de caracteres.
+
+using namespace std;: Esta linha permite o uso de elementos da biblioteca padrão de C++, como cout e cin, sem a necessidade de prefixar com std::.
+
+int main(): Inicia a função principal do programa. Todo programa C++ começa a execução a partir desta função.
+
+setlocale(LC_ALL,"");: Configura a localização para a do usuário. Isso pode afetar como caracteres especiais são exibidos.
+
+float salarioBruto, salarioLiquido, taxa = 0.0;: Declara três variáveis do tipo float chamadas salarioBruto (para o salário bruto), salarioLiquido (para o salário líquido) e taxa (para a taxa de imposto), inicializando taxa com 0.0.
+
+cout << "\n Introduza o Salário Bruto:\n";: Exibe uma mensagem para o usuário pedindo para inserir o salário bruto.
+
+cin >> salarioBruto;: Lê o valor inserido pelo usuário e o armazena na variável salarioBruto.
+
+if(salarioBruto < 0) cout << "\nSalário Inválido;\n";: Verifica se o salário bruto é negativo. Se for, exibe uma mensagem de erro.
+
+else { ... }: Se o salário bruto for válido (não negativo), executa o código dentro deste bloco.
+
+if(salarioBruto <= 1000) taxa = 0.10;: Se o salário bruto for menor ou igual a 1000, a taxa de imposto (taxa) é definida como 10%.
+
+else if (salarioBruto <= 1500) taxa = 0.15;: Se o salário bruto for maior que 1000, mas menor ou igual a 1500, a taxa de imposto é definida como 15%.
+
+else if(salarioBruto <= 2000) taxa = 0.23;: Se o salário bruto for maior que 1500, mas menor ou igual a 2000, a taxa de imposto é definida como 23%.
+
+else if(salarioBruto >= 2000) taxa = 0.35;: Se o salário bruto for maior ou igual a 2000, a taxa de imposto é definida como 35%.
+
+salarioLiquido = salarioBruto * (1 - taxa);: Calcula o salário líquido subtraindo a taxa de imposto do salário bruto.
+
+cout << salarioLiquido << " " << salarioBruto << " " << " " << taxa;: Exibe o salário líquido, salário bruto e a taxa de imposto.
+
+return 0;: Indica que o programa foi executado com sucesso e retorna um código de status 0 para o sistema operacional.
